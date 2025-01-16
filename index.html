@@ -56,7 +56,37 @@
 
         <div class="countdown" id="countdown">Faltan X días, X horas, X minutos, X segundos</div>
 
-        <a href="https://forms.gle/TU_ENLACE" class="button" target="_blank">Confirma tu asistencia</a>
+        <section style="text-align: center; margin: 30px auto;">
+            <h2 style="color: #4CAF50; font-size: 24px;">Confirma tu asistencia</h2>
+            <p style="color: #555;">Déjanos saber si podrás acompañarnos en este día especial.</p>
+
+            <form action="https://formspree.io/f/mvggnpoy" method="POST" style="max-width: 400px; margin: 0 auto; text-align: left;">
+                <label for="nombre" style="display: block; margin: 10px 0 5px;">Tu nombre:</label>
+
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Escribe tu nombre aquí" 
+                    required 
+                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+
+                <label for="email" style="display: block; margin: 10px 0 5px;">Tu correo electrónico:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Escribe tu correo" 
+                    required 
+                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+
+                <button 
+                    type="submit" 
+                    style="margin-top: 15px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Enviar
+                </button>
+            </form>
+        </section>
         <a href="https://addevent.com/" class="button" target="_blank">Guardar en mi calendario</a>
     </div>
 
