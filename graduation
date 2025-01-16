@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Invitación de Graduación!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 ¡Te Invito a Mi Graduación! 🎉</h1>
+        <p>Querida/o invitado:</p>
+        <p>Me encantaría contar contigo para celebrar este gran logro. 🥳✨</p>
+
+        <p><strong>📅 Fecha:</strong> 15 de febrero de 2025</p>
+        <p><strong>🕒 Hora:</strong> 6:00 PM</p>
+        <p><strong>📍 Lugar:</strong> Salón de Eventos XYZ</p>
+
+        <div class="countdown" id="countdown">Faltan X días, X horas, X minutos, X segundos</div>
+
+        <a href="https://forms.gle/TU_ENLACE" class="button" target="_blank">Confirma tu asistencia</a>
+        <a href="https://addevent.com/" class="button" target="_blank">Guardar en mi calendario</a>
+    </div>
+
+    <script>
+        // Función para el conteo regresivo
+        const graduationDate = new Date('2025-02-15T18:00:00');
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = graduationDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.textContent = `Faltan ${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+            } else {
+                countdownElement.textContent = "¡Hoy es el gran día!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
