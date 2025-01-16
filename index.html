@@ -42,6 +42,14 @@
         .button:hover {
             background-color: #45a049;
         }
+        #confirmationForm {
+            display: none;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -56,13 +64,13 @@
 
         <div class="countdown" id="countdown">Faltan X días, X horas, X minutos, X segundos</div>
 
+        <a href="https://forms.gle/TU_ENLACE" class="button" target="_blank">Confirma tu asistencia</a>
         <section style="text-align: center; margin: 30px auto;">
             <h2 style="color: #4CAF50; font-size: 24px;">Confirma tu asistencia</h2>
             <p style="color: #555;">Déjanos saber si podrás acompañarnos en este día especial.</p>
 
             <form action="https://formspree.io/f/mvggnpoy" method="POST" style="max-width: 400px; margin: 0 auto; text-align: left;">
                 <label for="nombre" style="display: block; margin: 10px 0 5px;">Tu nombre:</label>
-
                 <input 
                     type="text" 
                     id="nombre" 
@@ -103,6 +111,18 @@
         }
 
         setInterval(updateCountdown, 1000);
+
+        const showFormButton = document.getElementById('showFormButton');
+        const confirmationForm = document.getElementById('confirmationForm');
+
+        showFormButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (confirmationForm.style.display === 'none' || confirmationForm.style.display === '') {
+                confirmationForm.style.display = 'block';
+            } else {
+                confirmationForm.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
